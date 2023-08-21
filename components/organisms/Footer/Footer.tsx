@@ -181,7 +181,7 @@ const Footer: React.FC<FooterProps> = ({
 
       {/* Third footer section */}
       <div className="mt-6 lg:flex lg:flex-row-reverse lg:justify-between">
-        {!!secondaryMenu?.length && (
+        {secondaryMenu && secondaryMenu.length > 0 && (
           <div className="flex justify-between lg:justify-start lg:gap-8">
             {secondaryMenu.map((item) => (
               <Link key={item.id} href={item.link}>
@@ -223,7 +223,7 @@ const MobileColumns: React.FC<{ columns?: Column[] }> = ({ columns }) => (
 );
 
 const DesktopColumns: React.FC<{ columns?: Column[] }> = ({ columns }) =>
-  columns?.length ? (
+  columns?.length && columns.length > 0 ? (
     <div className="hidden flex-row gap-[88px] lg:flex">
       {columns.map((column, i) => (
         <div
