@@ -207,7 +207,8 @@ const Footer: React.FC<FooterProps> = ({
 
 const MobileColumns: React.FC<{ columns?: Column[] }> = ({ columns }) => (
   <div className="flex flex-col gap-4 lg:hidden">
-    {columns?.map((column, i) => (
+    {columns && columns.length > 0 &&  
+      columns?.map((column, i) => (
       <LinksAccordion
         key={column.heading ?? `column-${i}`}
         title={column.heading ?? `Column ${i + 1}`}
