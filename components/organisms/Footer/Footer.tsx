@@ -181,9 +181,9 @@ const Footer: React.FC<FooterProps> = ({
 
       {/* Third footer section */}
       <div className="mt-6 lg:flex lg:flex-row-reverse lg:justify-between">
-        {secondaryMenu && secondaryMenu.length > 0 && (
+        {!!secondaryMenu && typeof secondaryMenu === 'object' && (
           <div className="flex justify-between lg:justify-start lg:gap-8">
-            {secondaryMenu.map((item) => (
+            {Object.values(secondaryMenu).map((item) => (
               <Link key={item.id} href={item.link}>
                 <a className="whitespace-nowrap text-center text-2xs text-primary lg:text-sm">
                   {item.label}
